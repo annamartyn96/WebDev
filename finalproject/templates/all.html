@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+
+<form class= "myform">	
+<div class="main">
+
+<h1 class='myheader'>Our Community</h1>
+
+<h2 class='myh2'>Sign up and join the many members who are loving our community!</h2>
+
+<!-- Portfolio Gallery Grid -->
+
+<div class="row"></div>
+  <div class="column">
+
+    <div class="content">
+    	{% for item in data %}
+    	{% if item[4] == None or item[4] == "" %}
+		<img src="{{ url_for('static', filename='person.jpg') }}" style="width:70%", style="border-radius:50%"; class="center">
+		{% else %}
+      <img src="{{ url_for('static', filename=item[4]) }}" style="width:70%", style="border-radius:50%"; class="center">
+      {% endif %}
+      <h3>{{ item[0] }} {{ item[1] }} </h3> 
+      <br>
+     
+      	{% endfor %}
+
+    </div>
+
+</div>
+</div>
+  </form>
+
+  
+
+
+</body>
+
+{% endblock %}
+
+</html>
